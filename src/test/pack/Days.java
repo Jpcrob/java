@@ -4,41 +4,16 @@ import java.util.Scanner;
 
 public class Days {
     public static void main (String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter a Number from 1-7: ");
-        int days = sc.nextInt();
-        String red = "\u001B[32m";
-        String normal = "\u001B[0m";
-
-        if (days >= 1 && days <= 7) {
-            switch (days) {
-                case 1:
-                    System.out.println(red+"Monday"+normal+" today");
-                    break;
-                case 2:
-                    System.out.println("Tuesday");
-                    break;
-                case 3:
-                    System.out.println("Wednesday");
-                    break;
-                case 4:
-                    System.out.println("Thursday");
-                    break;
-                case 5:
-                    System.out.println("Friday");
-                    break;
-                case 6:
-                    System.out.println("Saturday");
-                    break;
-                case 7:
-                    System.out.println("Sunday");
-                    break;
-                default:
-                    System.out.println("Invalid Input");
-            }
+        String[] days = {"","Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number between 1 and 7: ");
+        int num = scanner.nextInt();
+        if (num >= 1 && num <= 7) {
+            String numDay = days[num];
+            System.out.println(num + " is " + numDay);
         }
-        else{
-            System.out.println("Invalid");
+        else {
+            System.out.println("Invalid input. Please enter a number between 1-7.");
         }
     }
 }
